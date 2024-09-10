@@ -25,10 +25,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env() #환경변수와 .env 파일 로딩
 environ.Env.read_env()
 
-#SECRET_KEY = "django-insecure-trqzdz)j1umdx#8=5qhi)u9!am_z#fm053q$im4izu-s6=8ag+"
-SECRET_KEY = env('DJANGO_SECRET_KEY', default='+$7(p9&ssydz03c#z)$i*p+&w5$&x62j_ab&7cg*mz$+5j058*')
+
+
+SECRET_KEY = "django-insecure-trqzdz)j1umdx#8=5qhi)u9!am_z#fm053q$im4izu-s6=8ag+"
+
+""" SECRET_KEY = env('DJANGO_SECRET_KEY', default='+$7(p9&ssydz03c#z)$i*p+&w5$&x62j_ab&7cg*mz$+5j058*')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DJANGO_DEBUG', default=False)
+ """
+
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -268,11 +274,18 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 STATIC_ROOT = Path(BASE_DIR) / 'staticfiles'
-STORAGES = {
+""" STORAGES = {
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
-}
+} """
+
+if not DEBUG:    # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
+    STATIC_ROOT = Path(BASE_DIR) / 'staticfiles'
+    # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
+    # and renames the files with unique names for each version to support long-term caching
+    STORAGES = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = Path(BASE_DIR) / "media"

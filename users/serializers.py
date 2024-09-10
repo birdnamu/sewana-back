@@ -26,7 +26,7 @@ class CustomRegisterSerializer(RegisterSerializer):
     fullname = serializers.CharField(required=True)
     email = serializers.EmailField(
         required=True,
-        validators=[UniqueValidator(queryset=User.objects.all())],
+        validators=[UniqueValidator(queryset=User.objects.all(), message="This email field must be unique.")],
     )
     password1 = serializers.CharField(
         write_only=True,
