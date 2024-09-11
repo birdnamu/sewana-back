@@ -9,6 +9,7 @@ class CommentSerializer(serializers.ModelSerializer):
   is_liked = serializers.SerializerMethodField()
   class Meta:
     model = Comment
+    ref_name = "BoardComment"
     fields = ['id', 'post', 'author', 'content', 'created_at', 'updated_at', 'likes_count', 'is_liked']
   def get_likes_count(self, obj):
     return obj.likes.count()
@@ -24,6 +25,7 @@ class PostSerializer(serializers.ModelSerializer):
   comments = CommentSerializer(many=True, read_only=True) # Post에 달린 댓글을 포함
   class Meta:
     model = Post
+    ref_name = "BoardPost"
     fields = ['id', 'author', 'title', 'question', 'content', 'created_at', 'updated_at', 'likes_count', 'is_liked', 'comments']
   def get_likes_count(self, obj):
     return obj.likes.count()

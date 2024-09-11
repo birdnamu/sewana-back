@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     "journal",
     "board",
     "todo",
+    "drf_yasg",
 ]
 
 MIDDLEWARE = [

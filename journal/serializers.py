@@ -8,6 +8,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Comment
+        ref_name = "JournalComment"
         fields = ['id', 'post', 'author', 'content', 'created_at', 'updated_at']
 
 
@@ -20,6 +21,7 @@ class PostSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Post
+        ref_name = "JournalPost"
         fields = ['id', 'author', 'title', 'date', 'content', 'created_at', 'updated_at', 'likes_count', 'is_liked', 'image', 'category', 'comments']
     
     def create(self, validated_data):
