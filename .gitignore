@@ -4,8 +4,8 @@ __pycache__/
 .Python
 0venv/
 
-db.sqlite3
-.DS_Store
+
+
 .env
 
 .vscode/
