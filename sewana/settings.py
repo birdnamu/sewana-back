@@ -29,10 +29,10 @@ environ.Env.read_env()
 
 SECRET_KEY = env('DJANGO_SECRET_KEY', default=False)
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool('DJANGO_DEBUG', default=False)
+# DEBUG = env.bool('DJANGO_DEBUG', default=False)
 
 """ SECRET_KEY = '^8880@ey0(_dlk&z9=6cb98kj5f-sh@y@td)kej^2mm@q+dh32' """
-""" DEBUG = True """
+DEBUG = True
 
 ALLOWED_HOSTS = ['43.201.108.95', '127.0.0.1', 'localhost'] # 별표 표시로 모든 사용자 허용
 
