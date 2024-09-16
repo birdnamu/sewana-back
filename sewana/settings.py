@@ -27,7 +27,7 @@ environ.Env.read_env()
 
 
 
-SECRET_KEY = env('DJANGO_SECRET_KEY', default=False)
+SECRET_KEY = env('DJANGO_SECRET_KEY', default='fallback-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = env.bool('DJANGO_DEBUG', default=False)
 
