@@ -27,16 +27,12 @@ environ.Env.read_env()
 
 
 
-SECRET_KEY = "django-insecure-trqzdz)j1umdx#8=5qhi)u9!am_z#fm053q$im4izu-s6=8ag+"
-
-""" SECRET_KEY = '^8880@ey0(_dlk&z9=6cb98kj5f-sh@y@td)kej^2mm@q+dh32' """
-
-""" SECRET_KEY = env('DJANGO_SECRET_KEY', default='+$7(p9&ssydz03c#z)$i*p+&w5$&x62j_ab&7cg*mz$+5j058*')
+SECRET_KEY = env('DJANGO_SECRET_KEY', default=False)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DJANGO_DEBUG', default=False)
- """
 
-DEBUG = True
+""" SECRET_KEY = '^8880@ey0(_dlk&z9=6cb98kj5f-sh@y@td)kej^2mm@q+dh32' """
+""" DEBUG = True """
 
 ALLOWED_HOSTS = ['43.201.108.95', '127.0.0.1', 'localhost'] # 별표 표시로 모든 사용자 허용
 
