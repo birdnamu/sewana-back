@@ -38,7 +38,7 @@ DEBUG = env.bool('DJANGO_DEBUG', default=False)
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['43.201.108.95', '127.0.0.1'] # 별표 표시로 모든 사용자 허용
+ALLOWED_HOSTS = ['43.201.108.95', '127.0.0.1', 'localhost'] # 별표 표시로 모든 사용자 허용
 
 
 # Application definition
