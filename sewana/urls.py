@@ -24,6 +24,9 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+# 첫화면 테스트를 위해 url path 하나 추가...위해..
+from users.views import *
+
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -36,6 +39,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    path('', CustomRegisterView.as_view(), name='aws_initial_page_test'),
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('journal/', include('journal.urls')),

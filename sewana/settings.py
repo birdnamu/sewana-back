@@ -29,6 +29,8 @@ environ.Env.read_env()
 
 SECRET_KEY = "django-insecure-trqzdz)j1umdx#8=5qhi)u9!am_z#fm053q$im4izu-s6=8ag+"
 
+""" SECRET_KEY = '^8880@ey0(_dlk&z9=6cb98kj5f-sh@y@td)kej^2mm@q+dh32' """
+
 """ SECRET_KEY = env('DJANGO_SECRET_KEY', default='+$7(p9&ssydz03c#z)$i*p+&w5$&x62j_ab&7cg*mz$+5j058*')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DJANGO_DEBUG', default=False)
@@ -36,7 +38,7 @@ DEBUG = env.bool('DJANGO_DEBUG', default=False)
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['43.201.108.95', '127.0.0.1', 'localhost'] # 별표 표시로 모든 사용자 허용
 
 
 # Application definition
@@ -272,20 +274,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
-
+STATIC_URL = "/static/"
 STATIC_ROOT = Path(BASE_DIR) / 'staticfiles'
-""" STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-} """
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-if not DEBUG:    # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
+
+""" if not DEBUG:    # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
     STATIC_ROOT = Path(BASE_DIR) / 'staticfiles'
-    # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
-    # and renames the files with unique names for each version to support long-term caching
-    STORAGES = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    STORAGES = {
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        },
+    } """
 
 
 MEDIA_URL = "media/"
