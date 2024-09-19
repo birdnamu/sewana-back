@@ -31,10 +31,9 @@ SECRET_KEY = env('DJANGO_SECRET_KEY', default='fallback-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = env.bool('DJANGO_DEBUG', default=False)
 
-""" SECRET_KEY = '^8880@ey0(_dlk&z9=6cb98kj5f-sh@y@td)kej^2mm@q+dh32' """
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['43.201.108.95', '127.0.0.1', 'localhost'] # 별표 표시로 모든 사용자 허용
+ALLOWED_HOSTS = ['3.34.138.158', '127.0.0.1', 'localhost'] # 별표 표시로 모든 사용자 허용
 
 
 # Application definition
@@ -82,7 +81,7 @@ MIDDLEWARE = [
 ]
 
 # 보안 설정
-'''
+
 # HTTP Strict Transport Security
 # HSTS 헤더를 설정하여 브라우저가 오직 HTTPS를 사용하도록 강제한다.
 SECURE_HSTS_SECONDS = 31536000  # HSTS 헤더를 통해 HTTPS를 강제 (1년)
@@ -98,12 +97,12 @@ SECURE_HSTS_PRELOAD = True
 X_FRAME_OPTIONS = "DENY" """
 
 # CORS 허용 도메인 설정 - 특정 도메인만 API 요청을 허용한다.
-""" CORS_ORICIN_ALLOW_ALL = False
+CORS_ORICIN_ALLOW_ALL = False
 CORS_ALLOWED_ORIGINS = [
     #새로운 도메인을 설정해줘야 한다.
-    # "https://example.com",
+    "3.34.138.158",
     # "https://anotherdomain.com",
-] """
+]
 
 # CSRF
 CSRF_COOKIE_SECURE = True # HTTPS 연결에서만 쿠키가 전송되도록 강제한다.
@@ -112,13 +111,13 @@ SECURE_BROWSER_XSS_FILTER = True # 브라우저의 XSS 필터링 기능을 활�
 # SSL/TLS
 SECURE_SSL_REDIRECT = True # 모든 HTTP요청을 HTTPS로 강제 리다이렉션한다. 
 SESSION_COOKIE_SECURE = True # HTTPS 연결에서만 쿠키가 전송되도록 강제한다.
-'''
 
-# 로컬환경 테스트를 위한 설정이다.. 아래를 삭제하고 위의 주석을 해제하자!!
+
+""" # 로컬환경 테스트를 위한 설정이다.. 아래를 삭제하고 위의 주석을 해제하자!!
 # 프론트엔드에서 자원(resorce)에 잘 접근할 수 있도록 처리해준다.
 CORS_ORICIN_ALLOW_ALL = True #모든 도메인에서의 요청을 허용합니다.
 CORS_ALLOW_CREDENTIALS = True #요청에 자격 증명을 포함할 수 있도록 허용합니다.
-
+ """
 # 여기까지 보안설정
 
 ROOT_URLCONF = "sewana.urls"
