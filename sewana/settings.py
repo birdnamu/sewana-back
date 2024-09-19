@@ -98,11 +98,11 @@ X_FRAME_OPTIONS = "DENY" """
 
 # CORS 허용 도메인 설정 - 특정 도메인만 API 요청을 허용한다.
 CORS_ORICIN_ALLOW_ALL = False
-CORS_ALLOWED_ORIGINS = [
+""" CORS_ALLOWED_ORIGINS = [
     #새로운 도메인을 설정해줘야 한다.
     "3.34.138.158",
     # "https://anotherdomain.com",
-]
+] """
 
 # CSRF
 CSRF_COOKIE_SECURE = True # HTTPS 연결에서만 쿠키가 전송되도록 강제한다.
